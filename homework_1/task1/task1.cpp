@@ -14,23 +14,22 @@
 #include <iostream>
 using namespace std;
 int main() {
-    unsigned int Num;
-    int reversed_number = 0, remainder;
-    int counter=0;
-    cin>>Num;
-    if(Num<1000000){
-        while(Num!=0) {
+    unsigned int num;
+    int reversedNumber = 0, remainder, counter=0;
+    cin>>num;
+    if (num < 1000000) {
+        while (Num != 0) {
             counter++;
             int firstNum = Num % 10;
-            int firstNumToPower2=firstNum*firstNum;
-            while(firstNumToPower2 != 0) {
+            int firstNumToPower2 = firstNum*firstNum;
+            while (firstNumToPower2 != 0) {
                 remainder = firstNumToPower2 % 10;
-                reversed_number = reversed_number * 10 + remainder;
+                reversedNumber = reversedNumber * 10 + remainder;
                 firstNumToPower2 /= 10;
             }
             Num /= 10;
         }
-        cout<<reversed_number+1;
+        cout<<reversedNumber+1;
     }
     else {
         cout<<"Incorrect input";
